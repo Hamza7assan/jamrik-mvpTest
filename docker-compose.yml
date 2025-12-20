@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:15
+    container_name: jamrik
+    environment:
+      POSTGRES_DB: jamrikDB
+      POSTGRES_USER: jamrik_admin
+      POSTGRES_PASSWORD: jamrik2025
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/dat
+volumes:
+  postgres_data:
