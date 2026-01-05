@@ -19,8 +19,8 @@
     </div>
 
     <!--Log in box -->
-    <form id="Form" novalidate action="http://localhost:8080/login" method="POST" >
-    <div id="whiteBox">
+        <form id="Form" novalidate action="/jamrik/login" method="POST">
+        <div id="whiteBox">
         <div>
             <p id="subTitle">Welcome back</p>
             <p id="underSubtitle">Enter your credentials to access your account</p>
@@ -28,10 +28,10 @@
 
         <p id="errorMessages"></p>
         <div id="logInPage">
-            <label id="email" for="emailBox">User Name</label>
+            <label id="email" for="emailBox">Email Address</label>
             <div style=" outline: none; position: relative; width: 100%;">
                 <img src="icons/mailicon.png" style="width:24px; height:24px; position: absolute; top: 47%; transform: translateY(-50%); left: 8px;"/>
-                <input type="email" id="emailBox" name="email" placeholder="Mohammed Ahmad">
+                <input type="email" id="emailBox" name="email" placeholder="Mohammed12ahmad@gmail.com">
             </div>
         
             <label id="password" for="passwordBox">Password</label>
@@ -41,6 +41,7 @@
                 <img id="eyeIcon" src="icons/eyeOff.png" style="width: 24px; height: 24px; position: absolute; top: 47%; transform: translateY(-50%); right: 35px; cursor: pointer;" />
 
             </div>
+
             
 
             <div>

@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/jamrik")
+@CrossOrigin(origins = "http://localhost:3000")
 public class JamrikController {
     //Autowiring the service and AI service classes via constructor injection
     private final JamrikService jamrikService;

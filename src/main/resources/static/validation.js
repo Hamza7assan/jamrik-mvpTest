@@ -22,17 +22,14 @@ else {
     e.preventDefault();
 
     const formData = {
-        UserName: emailInput.value, 
+        userName: emailInput.value, 
         password: passwordInput.value
     };
 
-    let endpoint = fullNameInput ? 'http://localhost:8080/jamrik/register' : 'http://localhost:8080/jamrik/login';
+    let endpoint = fullNameInput ? '/jamrik/register' : '/jamrik/login';
     
     if (fullNameInput) {
-        formData.Email = emailInput.value;
-        formData.UserName = fullNameInput.value;
-    }else{
-        formData.UserName = emailInput.value;
+        formData.fullName = fullNameInput.value;
     }
 
     fetch(endpoint, { 
@@ -44,7 +41,7 @@ else {
     })
     .then(response => {
         if (response.ok) {
-            window.location.href = 'mvpHsCode.html'; 
+            window.location.href = 'hscode.html'; 
         } else {
             errorMessages.innerText = fullNameInput ? 
                 "Registration failed." : "Invalid username or password.";
@@ -118,13 +115,21 @@ function getSignUpErrors(fullName, email, password, confirmPassword){
     return errors;
 };
 function getLogInErrors(email, password){
-
     let errors=[];
-
-    if(email === '' || email == null){
-        errors.push('username is required.');
+    if(email==='' || email==null){
+        errors.push('Email is required.');
         emailInput.parentElement.parentElement.classList.add('incorrect');
     }
+    if((!email.includes('.')||!email.includes('@')) && email!==""){
+        errors.push('Please enter a valid email address.');
+        emailInput.parentElement.parentElement.classList.add('incorrect');
+    }
+    if(email.includes(' ')){
+        errors.push('Email cannot contain spaces.');
+        emailInput.parentElement.parentElement.classList.add('incorrect');
+    }
+
+
     if(password==='' || password==null){
         errors.push('Password is required.');
         passwordInput.parentElement.parentElement.classList.add('incorrect');

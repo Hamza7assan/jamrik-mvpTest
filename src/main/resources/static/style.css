@@ -291,7 +291,7 @@
         }
         #whatsHsBox{
             display: flex;
-            padding-right: 10%;
+            padding-right: 25%;
             height: 132px;
             margin-top: 20px;
             background-color: #EFF6FF;
@@ -374,7 +374,7 @@
             margin-top: 5px;
         }
         #findHsCodeBox{
-            background-color: #1C398E;
+            background-color: #000000;
             width: 170px;
             height: 40px;
             border: 1px solid #E5E7EB;
@@ -389,9 +389,10 @@
             font-weight: 400;
             color: #FFFFFF;
             font-size: 20px;
+            padding-left: 10px;
         }
         #findHsCodeBox:hover {
-            background-color: #193CB8;
+            background-color: #333333;
         }
         #iconsWrapper{
             display: flex;
@@ -435,15 +436,16 @@ input::-webkit-credentials-auto-fill-button {
     display: none !important;
     pointer-events: none;
 }
-
 /* Mobile Adjustments (Phones and Tablets) */
 @media (max-width: 768px) {
+    /* Stack the side-by-side inputs vertically */
     #whiteBox2 div[style*="display: flex"] {
         flex-direction: column !important;
     }
 
+    /* Fix the eye icon positioning for mobile */
     #eyeIcon1, #eyeIcon2 {
-        margin-left: 95% !important; 
+        margin-left: 95% !important; /* Adjust icon position when box is narrow */
     }
 
     #forgotPassword {
@@ -453,11 +455,6 @@ input::-webkit-credentials-auto-fill-button {
     }
 
     #title {
-        font-size: 32px; 
-    }
-}
-@media (min-width: 1024px) {
-    #whatsHsBox {
-        padding-right: 25%; /* Only apply the large gap on big screens */
+        font-size: 32px; /* Smaller text for smaller screens */
     }
 }
