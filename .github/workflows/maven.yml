@@ -78,3 +78,4 @@ jobs:
           SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/jamrikDB
           SPRING_DATASOURCE_USERNAME: postgres
           SPRING_DATASOURCE_PASSWORD: password
+          SPRING_AI_GOOGLE_AI_API_KEY: ${{ secrets.GOOGLE_AI_API_KEY }}
